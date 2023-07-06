@@ -11,65 +11,11 @@ struct GitHubUserView: View {
     @State private var user: GitHubUser?
     @State private var profileName: String = "twixour"
     
+    @State private var showTopGitUserListView = false
+    
     var body: some View {
         VStack {
-            VStack {
-                Text("Username")
-                    .font(.title2)
-                    .fontWeight(.heavy)
-                
-                HStack {
-                    TextField("twixour", text: $profileName)
-                        .padding()
-                        .background(Color.white)
-                        .cornerRadius(20.0)
-                        .shadow(radius: 2, x:2, y: 2)
-                        .shadow(radius: 2, x:-2, y: -2)
-                        .disableAutocorrection(true)
-                        .onSubmit {
-                            Task {
-                                do {
-                                    user = try await getUser(username: profileName)
-                                } catch GHError.invalidURL {
-                                    print("invalid URL")
-                                } catch GHError.invalidResponse {
-                                    print("invalid response")
-                                } catch GHError.invalidData {
-                                    print("invalid data")
-                                } catch {
-                                    print("Unexpected Error")
-                                }
-                            }
-                        }
-                    Button(action:{
-                        Task {
-                            do {
-                                user = try await getUser(username: profileName)
-                            } catch GHError.invalidURL {
-                                print("invalid URL")
-                            } catch GHError.invalidResponse {
-                                print("invalid response")
-                            } catch GHError.invalidData {
-                                print("invalid data")
-                            } catch {
-                                print("Unexpected Error")
-                            }
-                        }
-                    }) {
-                        Text("Submit")
-                            .font(.headline)
-                            .fontWeight(.heavy)
-                            .foregroundColor(.white)
-                            .padding()
-                            .frame(width:100, height: 50)
-                            .background(Color.green)
-                            .cornerRadius(15.0)
-                            .shadow( radius: 2, x:2, y: 2)
-                            .shadow(radius: 2, x:-2, y: -2)
-                    }
-                }
-            }
-            .padding()
+            GitUserSearchView(profileName: $profileName, user: $user)
             
             VStack {
                 AsyncImage(url: URL(string: user?.avatarUrl ?? "")) {image in
@@ -91,6 +37,9 @@ struct GitHubUserView: View {
                 Text(user?.bio ?? "bio")
                     .padding()
                 Spacer()
+                
+                
+                
             }
             .padding()
             .task {
@@ -104,6 +53,27 @@ struct GitHubUserView: View {
                     print("invalid data")
                 } catch {
                     print("Unexpected Error")
+                }
+            }
+            
+            VStack {
+                Button(action:{
+                    showTopGitUserListView = true
+                }) {
+                    Text("Top Profiles")
+                        .font(.headline)
+                        .fontWeight(.heavy)
+                        .foregroundColor(Color.white)
+                        .padding()
+                        .frame(width:150, height: 50)
+                        .background(Color.green)
+                        .cornerRadius(15.0)
+                        .shadow( radius: 2, x:2, y: 2)
+                        .shadow(radius: 2, x:-2, y: -2)
+                   
+                }
+                .sheet(isPresented: $showTopGitUserListView) {
+                    TopGitHubUserListView(showTopGitUserListView: $showTopGitUserListView,profileName: $profileName, user: $user)
                 }
             }
         }

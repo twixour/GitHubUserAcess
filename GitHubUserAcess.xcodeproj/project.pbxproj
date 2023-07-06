@@ -13,6 +13,9 @@
 		E4000EF42A56A4F200604873 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E4000EF32A56A4F200604873 /* Preview Assets.xcassets */; };
 		E4000EFF2A56A53700604873 /* GitHubUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4000EFE2A56A53700604873 /* GitHubUser.swift */; };
 		E4000F012A56A55700604873 /* GitHubUserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4000F002A56A55700604873 /* GitHubUserView.swift */; };
+		E4000F032A56A76900604873 /* GitUserSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4000F022A56A76900604873 /* GitUserSearchView.swift */; };
+		E4000F052A56ACB100604873 /* TopGitHubUserListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4000F042A56ACB100604873 /* TopGitHubUserListView.swift */; };
+		E4000F072A56ADDC00604873 /* TopGitUsersList.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4000F062A56ADDC00604873 /* TopGitUsersList.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +26,9 @@
 		E4000EF32A56A4F200604873 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		E4000EFE2A56A53700604873 /* GitHubUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubUser.swift; sourceTree = "<group>"; };
 		E4000F002A56A55700604873 /* GitHubUserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubUserView.swift; sourceTree = "<group>"; };
+		E4000F022A56A76900604873 /* GitUserSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitUserSearchView.swift; sourceTree = "<group>"; };
+		E4000F042A56ACB100604873 /* TopGitHubUserListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopGitHubUserListView.swift; sourceTree = "<group>"; };
+		E4000F062A56ADDC00604873 /* TopGitUsersList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopGitUsersList.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +65,9 @@
 				E4000EEE2A56A4F100604873 /* ContentView.swift */,
 				E4000EFE2A56A53700604873 /* GitHubUser.swift */,
 				E4000F002A56A55700604873 /* GitHubUserView.swift */,
+				E4000F042A56ACB100604873 /* TopGitHubUserListView.swift */,
+				E4000F062A56ADDC00604873 /* TopGitUsersList.swift */,
+				E4000F022A56A76900604873 /* GitUserSearchView.swift */,
 				E4000EF02A56A4F200604873 /* Assets.xcassets */,
 				E4000EF22A56A4F200604873 /* Preview Content */,
 			);
@@ -145,8 +154,11 @@
 			files = (
 				E4000F012A56A55700604873 /* GitHubUserView.swift in Sources */,
 				E4000EEF2A56A4F100604873 /* ContentView.swift in Sources */,
+				E4000F052A56ACB100604873 /* TopGitHubUserListView.swift in Sources */,
 				E4000EED2A56A4F100604873 /* GitHubUserAcessApp.swift in Sources */,
+				E4000F032A56A76900604873 /* GitUserSearchView.swift in Sources */,
 				E4000EFF2A56A53700604873 /* GitHubUser.swift in Sources */,
+				E4000F072A56ADDC00604873 /* TopGitUsersList.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
